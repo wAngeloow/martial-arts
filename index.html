@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Combat | Academia de Artes Marciais</title>
+
+    <!--Favicon-->
+    <link rel="icon" href="./assets/img/favicon.png">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!--TailwindCSS-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!--Scripts-->
+    <script src="./assets/script/script.js" defer></script>
+    <script src="./assets/script/gsap.js" defer></script>
+</head>
+
+<body class="font-[Inter] flex flex-col gap-[40px] md:gap-[80px]">
+
+    <!--Header-->
+    <header class="relative h-screen p-5 md:p-7.5 lg:mb-5">
+
+        <div class="relative h-full bg-[url('./assets/img/academy-background.png')] bg-cover bg-center rounded-[30px]">
+
+            <!--Overlay-->
+            <div class="absolute inset-0 bg-black/25 rounded-[30px]">
+
+                <div class="relative z-10 h-full p-6 md:p-10">
+
+                    <!--Nav-->
+                    <nav class="flex justify-center lg:justify-end" aria-label="Menu principal">
+                        <ul class="flex gap-5 text-base text-white">
+                            <li class="relative group">
+                                <a class="transition-colors duration-300 group-hover:text-[#B8FE23]"
+                                    href="#modalidades">Modalidades</a>
+                                <span
+                                    class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8FE23] transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li class="relative group">
+                                <a class="transition-colors duration-300 group-hover:text-[#B8FE23]"
+                                    href="#equipe">Equipe</a>
+                                <span
+                                    class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8FE23] transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li class="relative group">
+                                <a class="transition-colors duration-300 group-hover:text-[#B8FE23]"
+                                    href="#planos">Planos</a>
+                                <span
+                                    class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8FE23] transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li class="relative group">
+                                <a class="transition-colors duration-300 group-hover:text-[#B8FE23]" href="#faq">FAQ</a>
+                                <span
+                                    class="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8FE23] transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!--Stats-->
+                    <div
+                        class="absolute right-6 md:right-10 md:right-auto lg:left-20 top-1/2 -translate-y-1/2 flex flex-col gap-5">
+                        <h1 class="sr-only">Apex Combat - Academia de Artes Marciais em [Sua Cidade]</h1>
+
+                        <div class="text-white text-end md:text-start leading-none">
+                            <p class="text-[40px] font-bold">+3</p>
+                            <p class="text-base uppercase">Professores</p>
+                        </div>
+                        <div class="text-white text-end md:text-start leading-none">
+                            <p class="text-[40px] font-bold">+50</p>
+                            <p class="text-base uppercase">Medalhas</p>
+                        </div>
+                        <div class="text-white text-end md:text-start leading-none">
+                            <p class="text-[40px] font-bold">+12</p>
+                            <p class="text-base uppercase">Anos de experiência</p>
+                        </div>
+                    </div>
+
+                    <!--CTA-->
+                    <a href="#"
+                        class="group absolute left-6 right-6 md:left-auto md:right-10 bottom-6 md:bottom-10 w-[calc(100%-48px)] md:w-auto flex items-center justify-between gap-2.5 bg-[#B8FE23] border-2 border-[#77AF00]/50 px-5 py-2.5 rounded-full overflow-hidden">
+
+                        <!--Hover effect-->
+                        <span
+                            class="absolute inset-0 size-full bg-[#98D712] origin-left scale-x-0 transition-transform duration-[475ms] ease-in-out group-hover:scale-x-100 z-0"></span>
+
+                        <span class="relative z-10 font-semibold text-black">Agendar aula</span>
+
+                        <!--Icon-->
+                        <svg class="z-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M12.052 14.829L13.466 16.243L17.71 12L13.467 7.75702L12.053 9.17202L13.88 11H6.34296V13H13.88L12.052 14.829Z"
+                                fill="#222222" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.778 19.778C24.074 15.482 24.074 8.518 19.778 4.222C15.482 -0.0739999 8.518 -0.0739999 4.222 4.222C-0.0739994 8.518 -0.0739994 15.482 4.222 19.778C8.518 24.074 15.482 24.074 19.778 19.778ZM18.364 18.364C20.0518 16.6762 21.0001 14.387 21.0001 12C21.0001 9.61304 20.0518 7.32384 18.364 5.636C16.6762 3.94816 14.387 2.99994 12 2.99994C9.61304 2.99994 7.32384 3.94816 5.636 5.636C3.94816 7.32384 2.99994 9.61304 2.99994 12C2.99994 14.387 3.94816 16.6762 5.636 18.364C7.32384 20.0518 9.61304 21.0001 12 21.0001C14.387 21.0001 16.6762 20.0518 18.364 18.364Z"
+                                fill="#222222" />
+                        </svg>
+                    </a>
+
+                    <!--Video-->
+                    <button type="button"
+                        class="group absolute left-[70px] bottom-[-100px] hidden lg:flex h-[250px] w-[350px] items-center justify-center overflow-hidden rounded-[30px] bg-[#222222] cursor-pointer"
+                        aria-label="Reproduzir vídeo da academia">
+
+                        <!--Cover-->
+                        <div id="videoPoster"
+                            class="absolute inset-0 z-10 bg-[url('./assets/img/video-cover.png')] bg-cover bg-center transition-opacity duration-300">
+                        </div>
+
+                        <video id="academyVideo" class="h-full w-full object-cover" loop playsinline preload="metadata">
+                            <source src="./assets/video/training-video.mp4" type="video/mp4">
+                        </video>
+
+                        <!--Overlay-->
+                        <div
+                            class="absolute inset-0 z-20 bg-black/20 transition-all duration-300 group-hover:bg-black/30">
+                        </div>
+
+                        <div id="videoIcon" class="absolute z-30">
+                            <i id="videoIconElement" class="fa-regular fa-circle-play text-[60px] text-white"></i>
+                        </div>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Students-->
+        <div
+            class="absolute bottom-[-20px] md:bottom-[-25px] left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-7.5 flex items-center justify-end gap-2.5">
+            <div class="flex -space-x-2.5">
+                <div class="size-7.5 rounded-full border border-white overflow-hidden bg-gray-200">
+                    <img src="./assets/img/students/student-01.svg" alt="Aluno da Apex Combat">
+                </div>
+                <div class="size-7.5 rounded-full border border-white overflow-hidden bg-gray-200">
+                    <img src="./assets/img/students/student-02.svg" alt="Aluno da Apex Combat">
+                </div>
+                <div class="size-7.5 rounded-full border border-white overflow-hidden bg-gray-200">
+                    <img src="./assets/img/students/student-03.svg" alt="Aluno da Apex Combat">
+                </div>
+                <div class="size-7.5 rounded-full border border-white overflow-hidden bg-gray-200">
+                    <img src="./assets/img/students/student-04.svg" alt="Aluno da Apex Combat">
+                </div>
+            </div>
+            <p class="text-lg whitespace-nowrap"><span class="font-bold">+500</span> alunos ativos</p>
+        </div>
+    </header>
+
+    <!--Marquee-->
+    <section class="marquee-container h-12.5 flex items-center overflow-hidden bg-[#A51421]"
+        aria-label="Nossos pilares">
+        <div class="marquee-content flex items-center gap-7.5 whitespace-nowrap will-change-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Disciplina</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Respeito</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class=" uppercase text-lg text-white font-medium">Superação</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Honra</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Dedicação</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Resistência</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Evolução</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Foco</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Coragem</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Autocontrole</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Agilidade</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Resiliência</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Estratégia</p>
+        </div>
+    </section>
+
+    <!--Modalities-->
+    <section id="modalidades"
+        class="m-auto w-full max-w-[980px] px-4 lg:px-0 flex items-center justify-center lg:justify-between gap-10">
+
+        <!--Post-->
+        <div class="hidden lg:flex flex-col rounded-[30px] shadow-lg">
+
+            <!--Image-->
+            <div
+                class="flex flex-col justify-between w-[445px] h-[397px] p-4 bg-[url('./assets/img/social-media-post.png')] bg-cover bg-center rounded-t-[30px]">
+
+                <!--Profile-->
+                <div class="flex gap-2.5 items-center">
+                    <img src="./assets/img/profile-photo.svg" alt="Logo oficial da Apex Combat">
+                    <div class="flex items-center gap-1.5">
+                        <p class="text-xs text-white font-semibold">@ApexCombat</p>
+
+                        <!--Icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.46063 0.422578C7.36133 0.263902 7.21504 0.140135 7.0421 0.0685055C6.86917 -0.00312392 6.67821 -0.0190518 6.4958 0.0229394L5.2012 0.320328C5.06853 0.350824 4.93066 0.350824 4.79799 0.320328L3.50339 0.0229394C3.32098 -0.0190518 3.13002 -0.00312392 2.95709 0.0685055C2.78415 0.140135 2.63786 0.263902 2.53855 0.422578L1.83293 1.54877C1.76093 1.66398 1.66373 1.76119 1.54852 1.83392L0.422406 2.53958C0.264014 2.6388 0.140437 2.78487 0.0688272 2.95752C-0.0027822 3.13017 -0.0188712 3.32083 0.0227933 3.50304L0.320163 4.79916C0.350547 4.93162 0.350547 5.06923 0.320163 5.20168L0.0227933 6.49709C-0.0190332 6.6794 -0.0030251 6.87022 0.068592 7.04301C0.140209 7.21581 0.263877 7.362 0.422406 7.46126L1.54852 8.16693C1.66373 8.23894 1.76093 8.33615 1.83365 8.45136L2.53928 9.57755C2.74232 9.9023 3.12969 10.0629 3.50339 9.97719L4.79799 9.6798C4.93066 9.6493 5.06853 9.6493 5.2012 9.6798L6.49652 9.97719C6.67883 10.019 6.86963 10.003 7.04241 9.93138C7.2152 9.85976 7.36138 9.73609 7.46063 9.57755L8.16626 8.45136C8.23826 8.33615 8.33546 8.23894 8.45067 8.16693L9.5775 7.46126C9.73604 7.36185 9.85965 7.2155 9.93114 7.04257C10.0026 6.86963 10.0185 6.67871 9.9764 6.49637L9.67975 5.20168C9.64925 5.069 9.64925 4.93113 9.67975 4.79844L9.97712 3.50304C10.019 3.3208 10.0031 3.13004 9.93163 2.95725C9.86014 2.78446 9.73662 2.63823 9.57822 2.53886L8.45139 1.8332C8.33634 1.76106 8.23911 1.66382 8.16698 1.54877L7.46063 0.422578ZM7.09846 3.39431C7.143 3.31241 7.15403 3.21643 7.12924 3.12656C7.10446 3.0367 7.04578 2.95995 6.96556 2.91247C6.88534 2.86499 6.78983 2.85047 6.69913 2.87198C6.60843 2.89349 6.5296 2.94934 6.47924 3.02779L4.59638 6.21482L3.45946 5.12607C3.42574 5.09144 3.38538 5.06395 3.3408 5.04526C3.29622 5.02656 3.24833 5.01703 3.19999 5.01724C3.15164 5.01745 3.10384 5.0274 3.05942 5.04648C3.01501 5.06557 2.97489 5.09341 2.94147 5.12833C2.90804 5.16326 2.88199 5.20456 2.86487 5.24977C2.84775 5.29499 2.83992 5.34319 2.84183 5.39149C2.84374 5.4398 2.85535 5.48723 2.87599 5.53095C2.89662 5.57467 2.92585 5.61379 2.96193 5.64597L4.42646 7.04938C4.46565 7.08686 4.51281 7.115 4.56441 7.1317C4.61601 7.1484 4.67071 7.15323 4.72443 7.14582C4.77816 7.13841 4.82951 7.11896 4.87467 7.08892C4.91982 7.05888 4.9576 7.01903 4.98519 6.97233L7.09846 3.39431Z"
+                                fill="#0095FF" />
+                        </svg>
+
+                    </div>
+                </div>
+
+                <!--Hashtags-->
+                <div class="flex gap-2.5">
+                    <p class="text-xs text-white">#EquipeNoTatame</p>
+                    <p class="text-xs text-white">#RespeitoAcimaDeTudo</p>
+                    <p class="text-xs text-white">#TreinoEDisciplina</p>
+                </div>
+            </div>
+
+            <!--Buttons-->
+            <div class="w-[445px] h-12 flex items-center justify-center gap-12 text-lg rounded-b-[30px] text-gray-700">
+                <button type="button" aria-label="Curtir publicação"><i class="fa-regular fa-heart cursor-pointer"
+                        title="Curtir"></i></button>
+                <button type="button" aria-label="Comentar na publicação"><i
+                        class="fa-regular fa-comment cursor-pointer" title="Comentar"></i></button>
+                <button type="button" aria-label="Compartilhar publicação"><i
+                        class="fa-regular fa-paper-plane cursor-pointer" title="Compartilhar"></i></button>
+                <button type="button" aria-label="Salvar publicação"><i class="fa-regular fa-bookmark cursor-pointer"
+                        title="Salvar"></i></button>
+                <button type="button" aria-label="Mais opções"><i class="fa-solid fa-ellipsis cursor-pointer"
+                        title="Opções"></i></button>
+            </div>
+        </div>
+
+        <!--Options-->
+        <div class="flex flex-col w-full max-w-[380px] gap-5">
+            <h2 class="uppercase text-4xl lg:text-[40px] text-center font-bold leading-none">Modalidades
+            </h2>
+
+            <!--Jiu-Jitsu card-->
+            <div class="flex p-5 bg-[#F5F5F7] rounded-[15px] gap-2.5 items-center">
+                <!--Icon-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
+                    <path
+                        d="M11 0L10.3989 0.601063C10.4356 0.63846 10.4668 0.680785 10.4917 0.726813L15.0289 8.89369L19.5069 0.729563C19.5149 0.714765 19.5235 0.700334 19.5328 0.686312L19 0C17 1.48188 13 1.32906 11 0ZM9.58625 1.41375L9 2C8 2 6 3 5 4L0 14L5 17L8 10L7.42762 15.4375H11.4398L14.3895 10.0594L9.58625 1.41375ZM20.2834 1.65294L13.2714 14.4375H17.5625V15.4375H22.5724L22 10L25 17L30 14L25 4C24.1674 3.24175 22 2 20.5529 2L20.2834 1.65294ZM7.09863 18.5625L6.47475 24.49L9.72581 18.5625H7.09863ZM11.0089 18.5625L6.20469 27.055C6.14231 27.1727 6 29 6 29H24L22.9014 18.5625H17.9101L20.9101 24.5625H17.6523L15 19.2579L12.3476 24.5625H9.09219C10.0894 22.5623 11.0814 20.5594 12.0849 18.5625H11.0089Z"
+                        fill="black" />
+                </svg>
+
+                <!--Content-->
+                <div class="flex flex-col">
+                    <h3 class="text-sm font-semibold leading-none text-gray-900">Jiu-Jitsu</h3>
+                    <p class="text-xs mt-1">Focado em defesa pessoal e estratégia de solo.</p>
+                </div>
+            </div>
+
+            <!--Boxing card-->
+            <div class="flex p-5 bg-[#F5F5F7] rounded-[15px] gap-2.5 items-center">
+                <!--Icon-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" fill="none">
+                    <path
+                        d="M25.5 18V3H30V18H25.5ZM15 0H7.5C7.5 0 0 0 0 6V15C0 17.655 1.5 19.14 3.105 19.965C3.34698 18.5764 4.0706 17.3174 5.14871 16.4094C6.22682 15.5014 7.59045 15.0024 9 15H13.5V18H9C8.20435 18 7.44129 18.3161 6.87868 18.8787C6.31607 19.4413 6 20.2044 6 21C6 21.7956 6.31607 22.5587 6.87868 23.1213C7.44129 23.6839 8.20435 24 9 24H16.5C22.5 24 22.5 18 22.5 18V3C22.5 3 21 0 15 0Z"
+                        fill="black" />
+                </svg>
+
+                <!--Content-->
+                <div class="flex flex-col">
+                    <h3 class="text-sm font-semibold leading-none text-gray-900">Boxe</h3>
+                    <p class="text-xs mt-1">Ideal para quem busca agilidade e queima calórica.</p>
+                </div>
+            </div>
+
+            <!--Karate card-->
+            <div class="flex p-5 bg-[#F5F5F7] rounded-[15px] gap-2.5 items-center">
+                <!--Icon-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" viewBox="0 0 30 35" fill="none">
+                    <path
+                        d="M28 1.66667L14.3333 12.8333L12.3167 11.1L18.3333 7.63333L10.6833 0L8.33333 2.35L12.9 6.91667L3.33333 12.4333L1.35 19.5833L5.45 26.6667L8.33333 25L4.95 19.1667L5.53333 16.9667L10.8333 20L11.6667 35H15L15.8333 18.3333L30 4L28 1.66667ZM3.33333 3.33333C4.21739 3.33333 5.06523 3.68452 5.69036 4.30964C6.31548 4.93476 6.66667 5.78261 6.66667 6.66667C6.66667 7.55072 6.31548 8.39857 5.69036 9.02369C5.06523 9.64881 4.21739 10 3.33333 10C1.48333 10 0 8.51667 0 6.66667C0 4.81667 1.5 3.33333 3.33333 3.33333Z"
+                        fill="black" />
+                </svg>
+
+                <!--Content-->
+                <div class="flex flex-col">
+                    <h3 class="text-sm font-semibold leading-none text-gray-900">Karatê</h3>
+                    <p class="text-xs mt-1">Arte focada em autodefesa, foco e autodisciplina.
+                    </p>
+                </div>
+            </div>
+
+            <!--CTA-->
+            <a href="#" title="Agende sua aula experimental gratuita"
+                class="group relative flex flex-col p-5 bg-[#B8FE23] border-4 border-[#77AF00]/50 rounded-[15px] overflow-hidden">
+
+                <!--Hover effect-->
+                <div
+                    class="absolute top-0 -left-64 h-full w-32 bg-white/40 skew-x-[-25deg] transition-all duration-700 ease-out group-hover:left-full">
+                </div>
+
+                <h3 class="text-sm font-bold text-black leading-none z-10">Aula Experimental</h3>
+
+                <div class="flex items-center justify-between mt-1 z-10">
+                    <p class="text-xs text-black/80">Agende agora seu primeiro treino gratuito.</p>
+
+                    <!--Icon-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M12.052 14.829L13.466 16.243L17.71 12L13.467 7.75696L12.053 9.17196L13.88 11H6.34296V13H13.88L12.052 14.829Z"
+                            fill="#222222" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M19.778 19.778C24.074 15.482 24.074 8.518 19.778 4.222C15.482 -0.0739999 8.518 -0.0739999 4.222 4.222C-0.0739994 8.518 -0.0739994 15.482 4.222 19.778C8.518 24.074 15.482 24.074 19.778 19.778ZM18.364 18.364C20.0518 16.6762 21.0001 14.387 21.0001 12C21.0001 9.61304 20.0518 7.32384 18.364 5.636C16.6762 3.94816 14.387 2.99994 12 2.99994C9.61304 2.99994 7.32384 3.94816 5.636 5.636C3.94816 7.32384 2.99994 9.61304 2.99994 12C2.99994 14.387 3.94816 16.6762 5.636 18.364C7.32384 20.0518 9.61304 21.0001 12 21.0001C14.387 21.0001 16.6762 20.0518 18.364 18.364Z"
+                            fill="#222222" />
+                    </svg>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!--Divider-->
+    <div role="separator" aria-hidden="true"
+        class="relative h-1 w-full max-w-[350px] lg:max-w-[980px] m-auto bg-[#DCDCDC]">
+        <span class="absolute left-0 top-0 w-[100px] lg:w-[280px] h-full bg-[#A51421]"></span>
+    </div>
+
+    <!--Coaches-->
+    <section id="equipe" class="m-auto w-full max-w-[980px] px-4 lg:px-0 flex flex-col gap-10">
+        <h2 class="uppercase text-4xl lg:text-[40px] text-center lg:text-start font-bold leading-none">Equipe</h2>
+
+        <!--Cards Container-->
+        <div
+            class="flex flex-col md:flex-row flex-wrap lg:flex-nowrap gap-5 lg:gap-10 items-center justify-center lg:justify-between">
+
+            <!--Flavio-->
+            <div
+                class="relative w-full max-w-[300px] h-[300px] p-4 flex flex-col justify-between overflow-hidden rounded-[30px]">
+                <img src="./assets/img/coaches/coach-flavio.png" alt="Professor Flávio Aguiar - Instrutor de Jiu-Jitsu"
+                    class="absolute inset-0 size-full object-cover z-0">
+
+                <!--Instagram-->
+                <div class="flex justify-end z-10">
+                    <a href="#" aria-label="Perfil do Instagram do Professor Flávio"
+                        class="size-7.5 flex items-center justify-center bg-[#B8FE23] rounded-full transition-transform hover:scale-110 duration-200">
+                        <i class="fa-brands fa-instagram text-black"></i>
+                    </a>
+                </div>
+
+                <!--Info-->
+                <div class="text-center bg-black/40 backdrop-blur-[4px] py-2 rounded-[20px] z-10">
+                    <h3 class="text-white text-sm font-bold">Flávio Aguiar</h3>
+                    <p class="text-gray-300 text-xs mt-0.5">Jiu-Jitsu</p>
+                </div>
+            </div>
+
+            <!--Bruno-->
+            <div
+                class="relative w-full max-w-[300px] h-[300px] p-4 flex flex-col justify-between overflow-hidden rounded-[30px]">
+                <img src="./assets/img/coaches/coach-bruno.png" alt="Professor Bruno Soares - Instrutor de Boxe"
+                    class="absolute inset-0 size-full object-cover z-0">
+
+                <!--Instagram-->
+                <div class="flex justify-end z-10">
+                    <a href="#" aria-label="Perfil do Instagram do Professor Bruno"
+                        class="size-7.5 flex items-center justify-center bg-[#B8FE23] rounded-full transition-transform hover:scale-110 duration-200">
+                        <i class="fa-brands fa-instagram text-black"></i>
+                    </a>
+                </div>
+
+                <!--Info-->
+                <div class="text-center bg-black/40 backdrop-blur-[4px] py-2 rounded-[20px] z-10">
+                    <h3 class="text-white text-sm font-bold">Bruno Soares</h3>
+                    <p class="text-gray-300 text-xs mt-0.5">Boxe</p>
+                </div>
+            </div>
+
+            <!--Akio-->
+            <div
+                class="relative w-full max-w-[300px] h-[300px] p-4 flex flex-col justify-between overflow-hidden rounded-[30px]">
+                <img src="./assets/img/coaches/coach-akio.png" alt="Mestre Akio Matsu - Instrutor de Karatê"
+                    class="absolute inset-0 size-full object-cover z-0">
+
+                <!--Instagram-->
+                <div class="flex justify-end z-10">
+                    <a href="#" aria-label="Perfil do Instagram do Mestre Akio"
+                        class="size-7.5 flex items-center justify-center bg-[#B8FE23] rounded-full transition-transform hover:scale-110 duration-200">
+                        <i class="fa-brands fa-instagram text-black"></i>
+                    </a>
+                </div>
+
+                <!--Info-->
+                <div class="text-center bg-black/40 backdrop-blur-[4px] py-2 rounded-[20px] z-10">
+                    <h3 class="text-white text-sm font-bold">Akio Matsu</h3>
+                    <p class="text-gray-300 text-xs mt-0.5">Karatê</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Marquee-->
+    <section class="marquee-container h-12.5 flex items-center overflow-hidden bg-[#A51421]"
+        aria-label="Nossos pilares">
+        <div class="marquee-content flex items-center gap-7.5 whitespace-nowrap will-change-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Disciplina</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Respeito</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class=" uppercase text-lg text-white font-medium">Superação</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Honra</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Dedicação</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Resistência</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Evolução</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Foco</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Coragem</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Autocontrole</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Agilidade</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Resiliência</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.93475 0.65475C7.61675 -0.21825 6.38275 -0.21825 6.06475 0.65475L4.62175 4.62175L0.65475 6.06475C-0.21825 6.38275 -0.21825 7.61675 0.65475 7.93475L4.62175 9.37775L6.06475 13.3448C6.38275 14.2178 7.61675 14.2178 7.93475 13.3448L9.37775 9.37775L13.3448 7.93475C14.2178 7.61675 14.2178 6.38275 13.3448 6.06475L9.37775 4.62175L7.93475 0.65475Z"
+                    fill="white" />
+            </svg>
+            <p class="uppercase text-lg text-white font-medium">Estratégia</p>
+        </div>
+    </section>
+
+    <!--Prices-->
+    <section id="planos" class="m-auto w-full max-w-[980px] px-4 lg:px-0 flex flex-col gap-10">
+        <h2 class="uppercase text-4xl lg:text-[40px] text-center lg:text-start font-bold leading-none">Planos</h2>
+
+        <!--Cards Container-->
+        <div
+            class="flex flex-col md:flex-row gap-8 lg:gap-10 justify-center lg:justify-between items-center md:items-stretch">
+
+            <!--Jiu-Jitsu card-->
+            <div
+                class="w-full max-w-[300px] mx-auto md:mx-0 flex flex-col justify-between bg-[#F6F6F6] gap-5 p-5 rounded-[30px] shadow-md">
+                <div class="flex flex-col gap-3">
+                    <!--Modality-->
+                    <div class="flex items-center gap-2.5">
+                        <!--Logo-->
+                        <div class="size-7.5 flex items-center justify-center rounded-[5px] bg-[#A51421]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13"
+                                fill="none" aria-hidden="true">
+                                <path
+                                    d="M5.13333 0L4.85284 0.269442C4.86993 0.286206 4.88449 0.30518 4.89612 0.325813L7.0135 3.98683L9.10321 0.327045C9.10694 0.320412 9.11098 0.313943 9.11531 0.307657L8.86667 0C7.93333 0.664289 6.06667 0.595787 5.13333 0ZM4.47358 0.63375L4.2 0.896552C3.73333 0.896552 2.8 1.34483 2.33333 1.7931L0 6.27586L2.33333 7.62069L3.73333 4.48276L3.46622 6.92026H5.33858L6.7151 4.50938L4.47358 0.63375ZM9.4656 0.740972L6.19331 6.47198H8.19583V6.92026H10.5338L10.2667 4.48276L11.6667 7.62069L14 6.27586L11.6667 1.7931C11.2781 1.4532 10.2667 0.896552 9.59134 0.896552L9.4656 0.740972ZM3.31269 8.32112L3.02155 10.9783L4.53871 8.32112H3.31269ZM5.1375 8.32112L2.89552 12.1281C2.86641 12.1809 2.8 13 2.8 13H11.2L10.6873 8.32112H8.35806L9.75806 11.0108H8.23775L7 8.63287L5.76223 11.0108H4.24302C4.70837 10.1141 5.17131 9.21627 5.63964 8.32112H5.1375Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                        <!--Name-->
+                        <h3 class="text-base font-semibold text-gray-900">Jiu-Jitsu</h3>
+                    </div>
+
+                    <!--Description-->
+                    <p class="text-sm text-gray-600">Desenvolva disciplina, defense pessoal e evolução técnica no
+                        tatame.</p>
+
+                    <hr class="border-0 h-px w-full bg-[#D9D9D9]" aria-hidden="true">
+
+                    <!--Included-->
+                    <div class="flex flex-col gap-2.5">
+                        <p class="text-base font-semibold text-gray-900">Incluso:</p>
+                        <!--List-->
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Aulas ilimitadas</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Open mat aos sábados</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Treinos para competição</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Graduação técnica</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Acesso ao vestiário</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <hr class="border-0 h-px w-full bg-[#D9D9D9]" aria-hidden="true">
+                    <!--Price-->
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">R$189,90 <span
+                                class="text-base text-[#848484] font-normal">/ mês</span></p>
+                    </div>
+                    <!--CTA-->
+                    <a href="#" title="Contratar plano Jiu-Jitsu"
+                        class="group relative overflow-hidden text-base font-semibold text-center text-white bg-[#00582C] rounded-full py-2.5 px-8 shadow-[0_5px_4px_rgba(4,72,38,0.25)] transition-all duration-500">
+                        <span
+                            class="absolute inset-0 size-full bg-[#044223] origin-left scale-x-0 transition-transform duration-[475ms] ease-in-out group-hover:scale-x-100 z-0"></span>
+                        <span class="relative z-10">Agendar aula</span>
+                    </a>
+                    <p class="text-[10px] text-center text-[#848484]">Sem taxa de matrícula</p>
+                </div>
+            </div>
+
+            <!--Boxing card-->
+            <div
+                class="w-full max-w-[300px] mx-auto md:mx-0 flex flex-col justify-between bg-[#F6F6F6] gap-5 p-5 rounded-[30px] shadow-md">
+                <div class="flex flex-col gap-3">
+                    <!--Modality-->
+                    <div class="flex items-center gap-2.5">
+                        <!--Logo-->
+                        <div class="size-7.5 flex items-center justify-center rounded-[5px] bg-[#A51421]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                fill="none" aria-hidden="true">
+                                <path
+                                    d="M11.9 8.25V1.375H14V8.25H11.9ZM7 0H3.5C3.5 0 0 0 0 2.75V6.875C0 8.09188 0.7 8.7725 1.449 9.15062C1.56192 8.51417 1.89961 7.93716 2.40273 7.52098C2.90585 7.1048 3.54221 6.87608 4.2 6.875H6.3V8.25H4.2C3.8287 8.25 3.4726 8.39487 3.21005 8.65273C2.9475 8.91059 2.8 9.26033 2.8 9.625C2.8 9.98967 2.9475 10.3394 3.21005 10.5973C3.4726 10.8551 3.8287 11 4.2 11H7.7C10.5 11 10.5 8.25 10.5 8.25V1.375C10.5 1.375 9.8 0 7 0Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                        <!--Name Corrigido-->
+                        <h3 class="text-base font-semibold text-gray-900">Boxe</h3>
+                    </div>
+
+                    <!--Description-->
+                    <p class="text-sm text-gray-600">Treinos intensos focados em resistência, técnica e velocidade.</p>
+
+                    <hr class="border-0 h-px w-full bg-[#D9D9D9]" aria-hidden="true">
+
+                    <!--Included-->
+                    <div class="flex flex-col gap-2.5">
+                        <p class="text-base font-semibold text-gray-900">Incluso:</p>
+                        <!--List-->
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">3 aulas por semana</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Treino funcional incluso</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Acesso ao equipamento</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Turmas para iniciantes</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Avaliação física gratuita</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <hr class="border-0 h-px w-full bg-[#D9D9D9]" aria-hidden="true">
+                    <!--Price-->
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">R$149,90 <span
+                                class="text-base text-[#848484] font-normal">/ mês</span></p>
+                    </div>
+                    <!--CTA-->
+                    <a href="#" title="Contratar plano Boxe"
+                        class="group relative overflow-hidden text-base font-semibold text-center text-white bg-[#00582C] rounded-full py-2.5 px-8 shadow-[0_5px_4px_rgba(4,72,38,0.25)] transition-all duration-500">
+                        <span
+                            class="absolute inset-0 size-full bg-[#044223] origin-left scale-x-0 transition-transform duration-[475ms] ease-in-out group-hover:scale-x-100 z-0"></span>
+                        <span class="relative z-10">Agendar aula</span>
+                    </a>
+                    <p class="text-[10px] text-center text-[#848484]">Sem taxa de matrícula</p>
+                </div>
+            </div>
+
+            <!--Karate card-->
+            <div
+                class="w-full max-w-[300px] mx-auto md:mx-0 flex flex-col justify-between bg-[#F6F6F6] gap-5 p-5 rounded-[30px] shadow-md">
+                <div class="flex flex-col gap-3">
+                    <!--Modality-->
+                    <div class="flex items-center gap-2.5">
+                        <!--Logo-->
+                        <div class="size-7.5 flex items-center justify-center rounded-[5px] bg-[#A51421]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"
+                                fill="none" aria-hidden="true">
+                                <path
+                                    d="M13.0667 0.761905L6.68889 5.86667L5.74778 5.07429L8.55556 3.48952L4.98556 0L3.88889 1.07429L6.02 3.1619L1.55556 5.68381L0.63 8.95238L2.54333 12.1905L3.88889 11.4286L2.31 8.7619L2.58222 7.75619L5.05556 9.14286L5.44444 16H7L7.38889 8.38095L14 1.82857L13.0667 0.761905ZM1.55556 1.52381C1.96811 1.52381 2.36378 1.68435 2.6555 1.97012C2.94722 2.25589 3.11111 2.64348 3.11111 3.04762C3.11111 3.45176 2.94722 3.83935 2.6555 4.12512C2.36378 4.41088 1.96811 4.57143 1.55556 4.57143C0.692222 4.57143 0 3.89333 0 3.04762C0 2.2019 0.7 1.52381 1.55556 1.52381Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                        <!--Name Corrigido-->
+                        <h3 class="text-base font-semibold text-gray-900">Karatê</h3>
+                    </div>
+
+                    <!--Description-->
+                    <p class="text-sm text-gray-600">Fortaleça corpo e mente através da tradição e do controle.</p>
+
+                    <hr class="border-0 h-px w-full bg-[#D9D9D9]" aria-hidden="true">
+
+                    <!--Included-->
+                    <div class="flex flex-col gap-2.5">
+                        <p class="text-base font-semibold text-gray-900">Incluso:</p>
+                        <!--List-->
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">2 aulas por semana</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Desenvolvimento disciplinar</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Turmas infantis e adultas</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Exames de faixa</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#044826]" aria-hidden="true"></i>
+                            <span class="text-sm text-gray-700">Ambiente familiar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <hr class="border-0 h-px w-full bg-[#D9D9D9]" aria-hidden="true">
+                    <!--Price-->
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">R$129,90 <span
+                                class="text-base text-[#848484] font-normal">/ mês</span></p>
+                    </div>
+                    <!--CTA-->
+                    <a href="#" title="Contratar plano Karatê"
+                        class="group relative overflow-hidden text-base font-semibold text-center text-white bg-[#00582C] rounded-full py-2.5 px-8 shadow-[0_5px_4px_rgba(4,72,38,0.25)] transition-all duration-500">
+                        <span
+                            class="absolute inset-0 size-full bg-[#044223] origin-left scale-x-0 transition-transform duration-[475ms] ease-in-out group-hover:scale-x-100 z-0"></span>
+                        <span class="relative z-10">Agendar aula</span>
+                    </a>
+                    <p class="text-[10px] text-center text-[#848484]">Sem taxa de matrícula</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Divider-->
+    <div role="separator" aria-hidden="true"
+        class="relative h-1 w-full max-w-[350px] lg:max-w-[980px] m-auto bg-[#DCDCDC]">
+        <span class="absolute left-0 top-0 w-[100px] lg:w-[280px] h-full bg-[#A51421]"></span>
+    </div>
+
+    <!--FAQ-->
+    <section id="faq"
+        class="mx-auto w-full max-w-[350px] lg:max-w-[980px] flex flex-col lg:flex-row gap-10 items-center lg:items-start justify-between">
+        <h2 class="lg:w-[266px] uppercase text-4xl lg:text-[40px] text-center lg:text-start font-bold leading-none">
+            PERGUNTAS <span class="text-[#A51421]">FREQUENTES</span>
+        </h2>
+
+        <!--Accordion Container-->
+        <div class="flex flex-col gap-5 w-full max-w-[350px] lg:max-w-[440px]">
+
+            <!--1-->
+            <details name="faq" open
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    A academia oferece aula experimental?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5 transition-all duration-300">Sim, sua primeira aula é totalmente
+                    gratuita.</p>
+            </details>
+
+            <!--2-->
+            <details name="faq"
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    Qual o horário de funcionamento?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5">De segunda a sexta, das 06h às 22h, e aos sábados, das 08h às
+                    12h.</p>
+            </details>
+
+            <!--3-->
+            <details name="faq"
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    Quanto tempo dura cada treino?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5">Cada treino dura em média 1 hora.</p>
+            </details>
+
+            <!--4-->
+            <details name="faq"
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    Os treinos incluem equipamentos?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5">Oferecemos acesso ao equipamento básico nos planos, mas
+                    recomendamos que você traga seus itens de uso pessoal (luvas, bandagens ou kimono).</p>
+            </details>
+
+            <!--5-->
+            <details name="faq"
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    Qual a idade mínima para treinar?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5">Atendemos crianças a partir de 5 anos (com turmas infantis) e
+                    também adultos.</p>
+            </details>
+
+            <!--6-->
+            <details name="faq"
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    Como funciona a matrícula?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5">É rápida e sem burocracia. Escolha seu plano (Jiu-Jitsu, Boxe ou
+                    Karatê), preencha o cadastro na recepção e comece no mesmo dia.</p>
+            </details>
+
+            <!--7-->
+            <details name="faq"
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    Quais formas de pagamento são aceitas?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5">Cartão de crédito (recorrência), débito, PIX e dinheiro.</p>
+            </details>
+
+            <!--8-->
+            <details name="faq"
+                class="group w-full p-5 rounded-[30px] border-[3px] border-[#F2F6F4] shadow-[0_0_10px_rgba(4,72,38,0.5)] bg-white cursor-pointer transition-all duration-300">
+
+                <!--Question-->
+                <summary
+                    class="relative list-none pr-8 text-base font-bold text-gray-900 select-none flex items-center justify-between">
+                    Como funciona o cancelamento do plano?
+
+                    <!--Icon-->
+                    <svg class="absolute right-0 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.66788 0.467695C5.44073 -0.155898 4.55927 -0.155898 4.33212 0.467695L3.30137 3.30137L0.467695 4.33212C-0.155898 4.55927 -0.155898 5.44073 0.467695 5.66788L3.30137 6.69863L4.33212 9.5323C4.55927 10.1559 5.44073 10.1559 5.66788 9.5323L6.69863 6.69863L9.5323 5.66788C10.1559 5.44073 10.1559 4.55927 9.5323 4.33212L6.69863 3.30137L5.66788 0.467695Z"
+                            fill="#044826" />
+                    </svg>
+                </summary>
+
+                <!--Answer-->
+                <p class="text-sm text-gray-600 mt-2.5">Basta solicitar na recepção com 30 dias de antecedência da
+                    próxima cobrança, sem taxas ou multas escondidas.</p>
+            </details>
+
+            <!--CTA-->
+            <a href="#" title="Agende sua aula no FAQ"
+                class="group relative overflow-hidden flex justify-between items-center w-full p-5 rounded-[30px] bg-[#A51421] text-base font-semibold text-white border-[3px] border-[#D28A90] shadow-md transition-all duration-500">
+
+                <!--Hover effect-->
+                <div
+                    class="absolute top-0 -left-64 h-full w-32 bg-white/30 skew-x-[-25deg] transition-all duration-700 ease-out group-hover:left-full">
+                </div>
+
+                <span class="relative z-10">Agendar aula</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true">
+                    <path
+                        d="M12.052 14.8291L13.466 16.2431L17.71 12.0001L13.467 7.75708L12.053 9.17208L13.88 11.0001H6.34296V13.0001H13.88L12.052 14.8291Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M19.778 19.778C24.074 15.482 24.074 8.518 19.778 4.222C15.482 -0.0739999 8.518 -0.0739999 4.222 4.222C-0.0739994 8.518 -0.0739994 15.482 4.222 19.778C8.518 24.074 15.482 24.074 19.778 19.778ZM18.364 18.364C20.0518 16.6762 21.0001 14.387 21.0001 12C21.0001 9.61304 20.0518 7.32384 18.364 5.636C16.6762 3.94816 14.387 2.99994 12 2.99994C9.61304 2.99994 7.32384 3.94816 5.636 5.636C3.94816 7.32384 2.99994 9.61304 2.99994 12C2.99994 14.387 3.94816 16.6762 5.636 18.364C7.32384 20.0518 9.61304 21.0001 12 21.0001C14.387 21.0001 16.6762 20.0518 18.364 18.364Z"
+                        fill="white" />
+                </svg>
+            </a>
+
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer
+        class="mx-auto w-full max-w-[350px] lg:max-w-[980px] pt-5 lg:pt-10 flex flex-col gap-5 lg:gap-10 border-t-4 border-[#DCDCDC]">
+
+        <div class="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center lg:items-start w-full">
+
+            <!--Copyright-->
+            <div class="flex flex-col lg:flex-row gap-5 lg:gap-10 w-full lg:w-auto text-center lg:text-start">
+                <div class="text-xs text-gray-600">
+                    <p>© 2026 Apex Combat</p>
+                    <p>Todos os direitos reservados.</p>
+                </div>
+
+                <nav class="flex flex-col items-center lg:items-start text-xs text-gray-600"
+                    aria-label="Links corporativos">
+                    <a href="#" class="hover:underline w-fit">Política de Privacidade</a>
+                    <a href="#" class="hover:underline w-fit">Termos de Uso</a>
+                </nav>
+            </div>
+
+            <!--Social Media-->
+            <div class="flex justify-center gap-2.5 w-full lg:w-auto">
+                <a href="#" aria-label="Siga-nos no Facebook"
+                    class="size-7.5 flex items-center justify-center rounded-full text-sm border border-black transition-all duration-200 hover:-translate-y-1">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" aria-label="Siga-nos no Instagram"
+                    class="size-7.5 flex items-center justify-center rounded-full text-sm border border-black transition-all duration-200 hover:-translate-y-1">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Siga-nos no TikTok"
+                    class="size-7.5 flex items-center justify-center rounded-full text-sm border border-black transition-all duration-200 hover:-translate-y-1">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="#" aria-label="Chame no WhatsApp"
+                    class="size-7.5 flex items-center justify-center rounded-full text-sm border border-black transition-all duration-200 hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#" aria-label="Siga-nos no X (Twitter)"
+                    class="size-7.5 flex items-center justify-center rounded-full text-sm border border-black transition-all duration-200 hover:-translate-y-1">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+        <!--Author-->
+        <div class="bg-[#222222] py-2.5 rounded-full mb-5 flex justify-center items-center w-full">
+            <a href="https://www.linkedin.com/in/angelodonada/" target="_blank" rel="noopener"
+                aria-label="Perfil do LinkedIn de Angelo Donada"
+                class="w-auto flex items-center gap-2.5 group cursor-pointer">
+
+                <!--Icon-->
+                <div class="bg-[#B8FE23] size-5 rounded-full flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path
+                            d="M7.06001 2.94148C7.16417 3.04567 7.22268 3.18696 7.22268 3.33429C7.22268 3.48161 7.16417 3.62291 7.06001 3.7271L3.72641 7.06069C3.67516 7.11376 3.61385 7.15608 3.54607 7.1852C3.47828 7.21432 3.40538 7.22965 3.33161 7.23029C3.25783 7.23093 3.18467 7.21687 3.11639 7.18893C3.04811 7.161 2.98608 7.11974 2.93391 7.06758C2.88174 7.01541 2.84049 6.95338 2.81255 6.8851C2.78462 6.81681 2.77056 6.74365 2.7712 6.66988C2.77184 6.59611 2.78717 6.5232 2.81629 6.45542C2.8454 6.38763 2.88773 6.32633 2.9408 6.27507L6.27439 2.94148C6.37858 2.83732 6.51987 2.77881 6.6672 2.77881C6.81452 2.77881 6.95582 2.83732 7.06001 2.94148Z"
+                            fill="#222222" />
+                        <path
+                            d="M9.02404 0.976864C10.3258 2.27919 10.3253 4.38991 8.99515 5.71835L8.69846 5.97614C8.64337 6.02401 8.5794 6.06055 8.51019 6.08369C8.44098 6.10683 8.36789 6.11611 8.29509 6.111C8.14807 6.10069 8.01117 6.03239 7.91451 5.92114C7.81784 5.80989 7.76933 5.66479 7.77965 5.51777C7.78996 5.37075 7.85826 5.23385 7.96951 5.13719L8.23786 4.90606C8.44425 4.69969 8.60796 4.45469 8.71965 4.18505C8.83134 3.91541 8.88883 3.62641 8.88883 3.33455C8.88883 3.04269 8.83134 2.75369 8.71965 2.48405C8.60796 2.21441 8.44425 1.96941 8.23786 1.76304C7.37002 0.894636 5.96269 0.894636 5.12262 1.73303L4.86538 2.03084C4.81766 2.08607 4.75953 2.13136 4.69431 2.16413C4.62909 2.1969 4.55805 2.2165 4.48526 2.22181C4.41246 2.22712 4.33933 2.21805 4.27004 2.1951C4.20075 2.17215 4.13666 2.13578 4.08143 2.08806C4.0262 2.04034 3.9809 1.98222 3.94814 1.91699C3.91537 1.85177 3.89577 1.78074 3.89046 1.70794C3.88514 1.63514 3.89422 1.56201 3.91717 1.49272C3.94011 1.42343 3.97649 1.35934 4.0242 1.30411L4.30923 0.976309C4.61882 0.666733 4.98637 0.421175 5.39088 0.253658C5.79538 0.086142 6.22893 -5.15702e-05 6.66675 2.31482e-08C7.10457 5.16165e-05 7.53809 0.0863473 7.94256 0.253959C8.34702 0.421571 8.71451 0.667215 9.02404 0.976864ZM2.0835 4.07766C2.18092 4.18813 2.2305 4.33275 2.22133 4.47976C2.21217 4.62676 2.145 4.76411 2.0346 4.86161L1.76625 5.09774C1.55854 5.30291 1.39362 5.54726 1.28106 5.81665C1.1685 6.08603 1.11054 6.37508 1.11054 6.66703C1.11054 6.95898 1.1685 7.24803 1.28106 7.51742C1.39362 7.7868 1.55854 8.03116 1.76625 8.23632C2.18527 8.65094 2.74983 8.88525 3.3393 8.8892C3.92876 8.89314 4.4964 8.66641 4.92094 8.25743L5.10984 8.00297C5.1534 7.94438 5.20807 7.89495 5.27074 7.85749C5.3334 7.82003 5.40283 7.79527 5.47506 7.78465C5.54729 7.77402 5.6209 7.77772 5.6917 7.79554C5.7625 7.81337 5.82909 7.84496 5.88768 7.88852C5.94627 7.93207 5.99571 7.98675 6.03317 8.04941C6.07063 8.11207 6.09538 8.1815 6.106 8.25373C6.11663 8.32596 6.11293 8.39958 6.09511 8.47037C6.07729 8.54117 6.04569 8.60777 6.00214 8.66635L5.78156 8.96304L5.726 9.02638C5.09473 9.65018 4.24302 10 3.35554 10C2.46806 10 1.61635 9.65018 0.985077 9.02638C0.672924 8.71781 0.425118 8.35035 0.256023 7.94531C0.0869278 7.54026 -9.44308e-05 7.10568 7.68952e-08 6.66675C7.68952e-08 5.78057 0.354472 4.93106 1.00786 4.28657L1.29899 4.02933C1.40938 3.93183 1.55397 3.88216 1.70097 3.89122C1.84797 3.90028 1.98592 3.96734 2.0835 4.07766Z"
+                            fill="#222222" />
+                    </svg>
+                </div>
+
+                <p class="text-xs text-white">Desenvolvido por <span
+                        class="text-[#B8FE23] font-bold group-hover:underline">Angelo Donada</span></p>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
