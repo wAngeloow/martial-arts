@@ -3,6 +3,7 @@ const videoContainer = video.parentElement;
 const videoIcon = document.querySelector("#videoIcon");
 const videoIconElement = document.querySelector("#videoIconElement");
 const videoPoster = document.querySelector("#videoPoster");
+const currentYear = document.querySelector("#current-year");
 
 //Play & Pause
 videoContainer.addEventListener("click", () => {
@@ -31,3 +32,6 @@ videoContainer.addEventListener("mouseleave", () => {
         videoIcon.classList.add("opacity-0");
     }
 });
+
+//Footer Copyright
+currentYear?.textContent = new Date().getFullYear();
