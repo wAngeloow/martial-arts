@@ -34,4 +34,4 @@ videoContainer.addEventListener("mouseleave", () => {
 });
 
 //Footer Copyright
-currentYear?.textContent = new Date().getFullYear();
+currentYear.textContent = new Date().getFullYear();
